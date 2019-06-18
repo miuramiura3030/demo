@@ -1,6 +1,6 @@
-reources: # 下の Job の get で参照される。
-- name: demo_resource # resource の名前、このディテクトリに clone するので後で file で指定出来る。
-  type: git # git clone で取ってくるリソース
+resources:
+- name: demo_resource
+  type: git
   source:
     uri: https://github.com/miuramiura3030/demo.git
     branch: master
@@ -9,6 +9,6 @@ jobs:
 - name: hello-world2
   public: true
   plan:
-  - get: demo_resource # 一番目の Step (Get): この名前のディレクトリに resource-tutorial を取得する。
-  - task: hello-world2 # 二番目の Step (Task)
-    file: demo_resource/demo.yml 
+  - get: demo_resource
+  - task: hello-world2
+    file: demo_resource/demo.yml
