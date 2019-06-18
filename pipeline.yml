@@ -12,4 +12,4 @@ jobs:
   plan:
   - get: demo_resource
   - task: hello-world2
-    file: demo_resource/demo.yml
+    file: demo_resource/hellodemo.yml
